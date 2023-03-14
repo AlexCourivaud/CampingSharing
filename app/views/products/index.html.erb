@@ -1,10 +1,17 @@
-<h1>Listes du matériel disponible:</h1>
-
-<% @products.each do |product| %>
-<div> <%= image_tag(product.photo) %>
+<h1>Listes des produits disponible:</h1>
+<div class="product-card">
+  <% @products.each do |product| %>
+    <div class="product-card-details">
+      <%= link_to product_path(product) do %>
+        <%= image_tag(product.photo) %>
+            <div><p>
+              <%= product.name %>
+              <div><%= product.description %>
+              </div></p>
+                <div>
+                <p><%= product.price %> €</div></p>
+                </div>
+    </div>
+      <% end %>
+  <% end %>
 </div>
-<%= product.name %>
-<div>
-<%= product.description %></div>
-
-<% end %>

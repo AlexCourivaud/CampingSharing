@@ -1,2 +1,13 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+Show
+<%= @product.id %>
+<% @product.name %>
+<%= image_tag(@product.photo) %>
+<%= @product.description %>
+
+
+<br>
+<br>
+<br>
+<div>
+<%= link_to "retour aux catégories", products_path, class: 'btn button-essential'  %>
+</div>
